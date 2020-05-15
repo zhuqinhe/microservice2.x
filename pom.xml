@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.microservice.cloud</groupId>
+	<artifactId>microservice-spring-cloud</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.2.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<modules>
+		<module>microservice-discovery-eureka</module>
+		<module>microservice-testclient</module>
+		<module>microservice-favorite</module>
+		<module>microservice-bookmark</module>
+		<module>microservice-hystrix-dashboard</module>
+		<module>microservice-turbine</module>
+		<module>microservice-config-server</module>
+		<module>microservice-bookmark-consumer</module>
+		<module>microservice-favorite-consumer</module>
+		<module>microservice-zuul</module>
+		<module>microservice-gateway</module>
+		<module>microservice-turbine-MQ</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud-aws.version>2.1.0.RELEASE</spring-cloud-aws.version>
+		<spring-cloud-bus.version>2.1.0.RELEASE</spring-cloud-bus.version>
+		<spring-cloud-cloudfoundry.version>2.1.0.RELEASE</spring-cloud-cloudfoundry.version>
+		<spring-cloud-commons.version>2.1.0.RELEASE</spring-cloud-commons.version>
+		<spring-cloud-config.version>2.1.0.RELEASE</spring-cloud-config.version>
+		<spring-cloud-consul.version>2.1.0.RELEASE</spring-cloud-consul.version>
+		<spring-cloud-contract.version>2.1.0.RELEASE</spring-cloud-contract.version>
+		<spring-cloud-function.version>2.0.0.RELEASE</spring-cloud-function.version>
+		<spring-cloud-gateway.version>2.1.0.RELEASE</spring-cloud-gateway.version>
+		<spring-cloud-gcp.version>1.1.0.RELEASE</spring-cloud-gcp.version>
+		<spring-cloud-kubernetes.version>1.0.0.RELEASE</spring-cloud-kubernetes.version>
+		<spring-cloud-netflix.version>2.1.0.RELEASE</spring-cloud-netflix.version>
+		<spring-cloud-openfeign.version>2.1.0.RELEASE</spring-cloud-openfeign.version>
+		<spring-cloud-security.version>2.1.0.RELEASE</spring-cloud-security.version>
+		<spring-cloud-sleuth.version>2.1.0.RELEASE</spring-cloud-sleuth.version>
+		<spring-cloud-stream.version>Fishtown.RELEASE</spring-cloud-stream.version>
+		<spring-cloud-task.version>2.1.0.RELEASE</spring-cloud-task.version>
+		<spring-cloud-vault.version>2.1.0.RELEASE</spring-cloud-vault.version>
+		<spring-cloud-zookeeper.version>2.1.0.RELEASE</spring-cloud-zookeeper.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
