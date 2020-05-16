@@ -10,7 +10,6 @@ import java.util.UUID;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.log4j.Logger;
 import org.apache.commons.net.util.Base64;
 
 import com.bookmark.constants.TerminalType;
@@ -32,7 +31,6 @@ public class Header {
 	private static final String RANDOM = "random";
 	private static final String HMAC = "hmac";
 
-	private final static Logger log = Logger.getLogger(Header.class);
 
 	// 设置header 请求头
 	public static Map<String, String> headers(String token, String deviceId, TerminalType terminalType, String body)
@@ -94,14 +92,12 @@ public class Header {
 			strb.append("{}}");
 		}
 
-		log.info(">>>>> header=" + strb);
 		// KEY 文件头加密 生成HMAC
 		String Key = createMD5(createMD5(token) + token.substring(5, 10));
 		// 服务端产生hmac
 		String hmac = calculateHMAC(strb.toString(), Key);
 
 		System.out.println("HMAC:" + hmac);
-		log.info("HMAC:" + hmac);
 
 		// 加密处理
 		headers.put(HMAC, hmac);

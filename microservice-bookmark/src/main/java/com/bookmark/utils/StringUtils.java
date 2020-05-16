@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-import org.apache.log4j.Logger;
 
 
 /**
@@ -15,7 +14,6 @@ import org.apache.log4j.Logger;
 public final class StringUtils {
 	
 	public static final long HOURS_ONE_DAY = 24 * 60 * 60 * 1000;
-	private static Logger log = Logger.getLogger(StringUtils.class);
 
 	/**
 	 * 人文件的作路径中
@@ -93,8 +91,6 @@ public final class StringUtils {
 		try {
 			i = Integer.parseInt(p);
 		} catch (NumberFormatException e) {
-			log.error(e.getMessage(), e);
-			log.error("分页数字转换错误");
 		}
 		return i;
 	}
@@ -109,8 +105,6 @@ public final class StringUtils {
 			try {
 				pl = Long.parseLong(p);
 			} catch (NumberFormatException e) {
-				log.error("id is not a number");
-				log.error(e.getMessage(), e);
 			}
 		}
 		return pl;
@@ -330,7 +324,6 @@ public final class StringUtils {
 	public static String getCorrelateID() {
 		String correlateID = UUID.randomUUID().toString().replace("-", "");
 		if (correlateID.length() != 32) {
-			log.info(">>>>>correlateID is not 32bit");
 		}
 		return correlateID;
 	}

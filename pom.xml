@@ -27,6 +27,7 @@
 		<module>microservice-zuul</module>
 		<module>microservice-gateway</module>
 		<module>microservice-turbine-MQ</module>
+		<module>microservice-admin</module>
 	</modules>
 
 	<properties>
@@ -52,6 +53,7 @@
 		<spring-cloud-task.version>2.1.0.RELEASE</spring-cloud-task.version>
 		<spring-cloud-vault.version>2.1.0.RELEASE</spring-cloud-vault.version>
 		<spring-cloud-zookeeper.version>2.1.0.RELEASE</spring-cloud-zookeeper.version>
+		<spring.admin.version>2.1.4</spring.admin.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
