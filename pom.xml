@@ -13,7 +13,17 @@
 		<version>2.1.2.RELEASE</version>
 		<relativePath />
 	</parent>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<modules>
 		<module>microservice-discovery-eureka</module>
 		<module>microservice-testclient</module>
@@ -28,6 +38,8 @@
 		<module>microservice-gateway</module>
 		<module>microservice-turbine-MQ</module>
 		<module>microservice-admin</module>
+		<module>microservice-zipkin</module>
+	
 	</modules>
 
 	<properties>
@@ -55,17 +67,7 @@
 		<spring-cloud-zookeeper.version>2.1.0.RELEASE</spring-cloud-zookeeper.version>
 		<spring.admin.version>2.1.4</spring.admin.version>
 	</properties>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Greenwich.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+
 
 	<build>
 		<plugins>
