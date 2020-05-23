@@ -1,4 +1,4 @@
-package com.eureka;
+package com.dashboard;
 
 
 import org.springframework.boot.SpringApplication;
