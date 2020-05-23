@@ -8,6 +8,6 @@ spec:
   - port: 8080
     targetPort: 8080
     # 节点暴露给外部的端口（范围必须为30000-32767）
-    nodePort: 8761
+    nodePort: 30000
   selector:
     app: microservice-discovery-eureka
