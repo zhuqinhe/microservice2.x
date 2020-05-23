@@ -1,0 +1,24 @@
+yum install etcd -y
+#启动etcd
+systemctl start etcd
+systemctl enable etcd
+#输入如下命令查看 etcd 健康状况
+etcdctl -C http://localhost:2379 cluster-health
+#安装 Kubernetes
+yum install kubernetes -y
+
+编辑文件 /etc/kubernetes/apiserver，将 KUBE_ADMISSION_CONTROL 后面的 ServiceAccount 去掉
+
+启动以下程序（Master）
+systemctl start kube-apiserver
+systemctl enable kube-apiserver
+systemctl start kube-controller-manager
+systemctl enable kube-controller-manager
+systemctl start kube-scheduler
+systemctl enable kube-scheduler
+
+启动 Node 节点的程序
+systemctl start kubelet
+systemctl enable kubelet
+systemctl start kube-proxy
+systemctl enable kube-proxy
