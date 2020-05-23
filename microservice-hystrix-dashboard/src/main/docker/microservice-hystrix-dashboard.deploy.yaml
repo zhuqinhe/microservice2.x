@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: microservice-hystrix-dashboard
+spec:
+  # 节点数，设置为多个可以实现负载均衡效果
+  replicas: 1
+  selector:
+    app: microservice-hystrix-dashboard
+  template:
+    metadata:
+      labels:
+        app: microservice-hystrix-dashboard
+    spec:
+      containers:
+      - image: microservice-hystrix-dashboard
+        imagePullPolicy: IfNotPresent
+        name: microservice-hystrix-dashboard
