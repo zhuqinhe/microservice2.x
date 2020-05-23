@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: microservice-zuul
+spec:
+  # 节点数，设置为多个可以实现负载均衡效果
+  replicas: 1
+  selector:
+    app: microservice-zuul
+  template:
+    metadata:
+      labels:
+        app: microservice-zuul
+    spec:
+      containers:
+      - image: microservice-zuul
+        imagePullPolicy: IfNotPresent
+        name: microservice-zuul
