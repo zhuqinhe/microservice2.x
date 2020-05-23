@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: microservice-favorite-consumer
+spec:
+  # 节点数，设置为多个可以实现负载均衡效果
+  replicas: 1
+  selector:
+    app: microservice-favorite-consumer
+  template:
+    metadata:
+      labels:
+        app: microservice-favorite-consumer
+    spec:
+      containers:
+      - image: microservice-favorite-consumer
+        imagePullPolicy: IfNotPresent
+        name: microservice-favorite-consumer
