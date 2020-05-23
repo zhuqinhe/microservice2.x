@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: microservice-discovery-eureka
+  name: microservice-admin
 spec:
   # 节点数，设置为多个可以实现负载均衡效果
   replicas: 1
   selector:
-    app: microservice-discovery-eureka
+    app: microservice-admin
   template:
     metadata:
       labels:
-        app: microservice-discovery-eureka
+        app: microservice-admin
     spec:
       containers:
-      - image: microservice-discovery-eureka
+      - image: microservice-admin
         imagePullPolicy: IfNotPresent
-        name: microservice-discovery-eureka
+        name: microservice-admin
