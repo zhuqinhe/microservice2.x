@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice-favorite-consumer
+spec:
+  type: NodePort
+  ports:
+  - port: 10000
+    targetPort: 10000   # 节点暴露给外部的端口（范围必须为30000-32767）
+    nodePort: 30007
+  selector:
+    app: microservice-favorite-consumer

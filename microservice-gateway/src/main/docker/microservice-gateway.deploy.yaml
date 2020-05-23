@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name:microservice-gateway
+spec:
+  # 节点数，设置为多个可以实现负载均衡效果
+  replicas: 1
+  selector:
+    app: microservice-gateway
+  template:
+    metadata:
+      labels:
+        app: microservice-gateway
+    spec:
+      containers:
+      - image: microservice-gateway
+        imagePullPolicy: IfNotPresent
+        name: microservice-gateway
