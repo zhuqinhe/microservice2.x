@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice-config-server
+spec:
+  type: NodePort
+  ports:
+  - port: 6800
+    targetPort: 6800   # 节点暴露给外部的端口（范围必须为30000-32767）
+    nodePort: 30004
+  selector:
+    app: microservice-favorite

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: microservice-favorite
+spec:
+  # 节点数，设置为多个可以实现负载均衡效果
+  replicas: 1
+  selector:
+    app: microservice-favorite
+  template:
+    metadata:
+      labels:
+        app: microservice-favorite
+    spec:
+      containers:
+      - image: microservice-favorite
+        imagePullPolicy: IfNotPresent
+        name: microservice-favorite
