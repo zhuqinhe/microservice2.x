@@ -1,18 +1,18 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: microservice-bookmark-consumer
+  name: microservice-config-server
 spec:
   # 节点数，设置为多个可以实现负载均衡效果
   replicas: 1
   selector:
-    app: microservice-bookmark-consumer
+    app: microservice-config-server
   template:
     metadata:
       labels:
-        app: microservice-bookmark-consumer
+        app: microservice-config-server
     spec:
       containers:
-      - image: microservice-bookmark-consumer
+      - image: microservice-config-server
         imagePullPolicy: IfNotPresent
-        name: microservice-bookmark-consumer
+        name: microservice-config-server
